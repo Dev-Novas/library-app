@@ -34,21 +34,19 @@ const Footer = () => {
         {/* right */}
         <div className="w-full md:w-1/3 text-center md:text-left mt-6 md:mt-0 ">
           <h3 className="text-[#ED553B] font-semibold">LATEST NEWS</h3>
-          {/* img 1 */}
           <div className="flex items-center space-x-4">
-            <img src="" alt="news1" />
-          </div>
+            <p className="text-lg font-semibold underline text-gray-900">News 1</p>
+            </div>
           <div>
-            <h4 className="text-sm font-semibold text-gray-900">Nostrud exercitation ullamco laboris nisi ut <br /> aliquip ex ea
+            <h4 className="text-sm font-medium">Nostrud exercitation ullamco laboris nisi ut <br /> aliquip ex ea
             commodo consequat.</h4>
             <p className="text-xs text-gray-500">10 March 2025</p>
           </div>
-          {/* img 2 */}
-          <div className="lex items-center space-x-4">
-            <img src="" alt="news2" />
+          <div className="flex items-center space-x-4">
+            <p className="text-lg font-semibold underline text-gray-900">News 2</p>
             </div>
             <div>
-            <h4 className="text-sm font-semibold text-gray-900">Nostrud exercitation ullamco laboris nisi ut <br /> aliquip ex ea
+            <h4 className="text-sm font-medium">Nostrud exercitation ullamco laboris nisi ut <br /> aliquip ex ea
             commodo consequat.</h4>
             <p className="text-xs text-gray-500">10 March 2025</p>
             </div>
