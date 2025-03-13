@@ -1,10 +1,15 @@
 import React from "react";
 import PagesLayout from "../layouts/PagesLayout";
+import Seeme from "../assets/images/seeme.png"
+import Last from "../assets/images/last.png"
+import Rtireland from "../assets/images/rtireland.jpg"
+import Tear from "../assets/images/tear.jpg"
 
 const SingleBook = () => {
+
   return (
     <PagesLayout>
-      <div className="bg-white p-8  max-w-7xl  m-0">
+      <div className="bg-white p-8  max-w-7xl  m-0 font-play-au">
         {/* Main Book Info Section */}
         <div className="flex flex-col md:flex-row items-start mb-8">
           {/* Book Image - Made Taller (50% of viewport height) */}
@@ -181,7 +186,7 @@ const SingleBook = () => {
             {/* Related Book 1 */}
             <div className="border rounded-lg p-5 hover:shadow-md transition">
               <img
-                src="https://images.unsplash.com/photo-1523771905297-f3c93ef8e4bc"
+                src={Seeme}
                 alt="Book cover"
                 className="w-full h-56 object-cover rounded-md"
               />
@@ -194,24 +199,24 @@ const SingleBook = () => {
             {/* Related Book 2 */}
             <div className="border rounded-lg p-5 hover:shadow-md transition">
               <img
-                src="https://images.unsplash.com/photo-1542482378-4e3530c8e525"
+                src={Last}
                 alt="Book cover"
                 className="w-full h-56 object-cover rounded-md"
               />
-              <h3 className="mt-4 font-medium text-gray-800 text-lg">Birds of North America</h3>
+              <h3 className="mt-4 font-medium text-gray-800 text-lg">The Last Light Of Us</h3>
               <p className="text-base text-gray-600">Robert Wilson</p>
               <div className="flex text-yellow-400 text-base mt-2">⭐⭐⭐⭐☆</div>
-              <p className="mt-2 font-medium text-gray-900 text-lg">$27.50</p>
+              <p className="mt-2 font-medium text-gray-900 text-lg">Free</p>
             </div>
 
             {/* Related Book 3 */}
             <div className="border rounded-lg p-5 hover:shadow-md transition">
               <img
-                src="https://images.unsplash.com/photo-1515125520141-3e3b67bc0a88"
+                src={Rtireland}
                 alt="Book cover"
                 className="w-full h-56 object-cover rounded-md"
               />
-              <h3 className="mt-4 font-medium text-gray-800 text-lg">Birdwatching for Beginners</h3>
+              <h3 className="mt-4 font-medium text-gray-800 text-lg">Road To Ireland</h3>
               <p className="text-base text-gray-600">Maria Johnson</p>
               <div className="flex text-yellow-400 text-base mt-2">⭐⭐⭐⭐☆</div>
               <p className="mt-2 font-medium text-gray-900 text-lg">$15.99</p>
@@ -220,11 +225,11 @@ const SingleBook = () => {
             {/* Related Book 4 */}
             <div className="border rounded-lg p-5 hover:shadow-md transition">
               <img
-                src="https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+                src={Tear}
                 alt="Book cover"
                 className="w-full h-56 object-cover rounded-md"
               />
-              <h3 className="mt-4 font-medium text-gray-800 text-lg">Hummingbirds of the World</h3>
+              <h3 className="mt-4 font-medium text-gray-800 text-lg">A Tear's Journey</h3>
               <p className="text-base text-gray-600">David Zhang</p>
               <div className="flex text-yellow-400 text-base mt-2">⭐⭐⭐⭐⭐</div>
               <p className="mt-2 font-medium text-gray-900 text-lg">$22.99</p>
