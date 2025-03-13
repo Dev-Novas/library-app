@@ -181,6 +181,10 @@ const Books = () => {
     { id: 4, title: 'Pride and Prejudice', author: 'Jane Austen', year: 1813, genre: 'Romance', rating: 4.6, isAvailable: true, coverImg: '/api/placeholder/150/200' },
     { id: 5, title: 'The Hobbit', author: 'J.R.R. Tolkien', year: 1937, genre: 'Fantasy', rating: 4.9, isAvailable: true, coverImg: '/api/placeholder/150/200' },
     { id: 6, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951, genre: 'Fiction', rating: 4.3, isAvailable: false, coverImg: '/api/placeholder/150/200' },
+    { id: 7, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951, genre: 'Fiction', rating: 4.3, isAvailable: false, coverImg: '/api/placeholder/150/200' },
+    { id: 8, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951, genre: 'Fiction', rating: 4.3, isAvailable: false, coverImg: '/api/placeholder/150/200' },
+    { id: 9, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951, genre: 'Fiction', rating: 4.3, isAvailable: false, coverImg: '/api/placeholder/150/200' },
+    { id: 10, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951, genre: 'Fiction', rating: 4.3, isAvailable: false, coverImg: '/api/placeholder/150/200' },
   ];
 
   const [books, setBooks] = useState(initialBooks);
@@ -213,13 +217,13 @@ const Books = () => {
   });
 
   return (
-   <PagesLayout>
-     <div className="max-w-7xl mx-auto p-4 bg-[#FBEEEE] font-play-au">
-      <h1 className="text-3xl font-bold mb-6 text-center text-[#173F5F]">Library Book Collection</h1>
+    <PagesLayout>
+      <div className="max-w-7xl mx-auto p-4 bg-[#FBEEEE] font-play-au">
+        <h1 className="text-3xl font-bold mb-6 text-center text-[#173F5F]">Library Book Collection</h1>
 
-      {/* Search and Filter Bar */}
-      <div className="flex flex-col md:flex-row gap-4 mb-6">
-        <div className="relative flex-grow">
+        {/* Search and Filter Bar */}
+        <div className="flex flex-col md:flex-row gap-4 mb-6">
+          {/* <div className="relative flex-grow">
           <input
             type="text"
             placeholder="Search by title or author..."
@@ -228,41 +232,41 @@ const Books = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+        </div> */}
+
+          <div className="relative w-full md:w-48 space-y-10">
+            <select
+              className="w-full p-2 border rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={filterType}
+              onChange={(e) => setFilterType(e.target.value)}
+            >
+              {filterOptions.map(option => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-3 top-3 h-4 w-4 text-gray-400 pointer-events-none" />
+          </div>
         </div>
 
-        <div className="relative w-full md:w-48">
-          <select
-            className="w-full p-2 border rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={filterType}
-            onChange={(e) => setFilterType(e.target.value)}
-          >
-            {filterOptions.map(option => (
-              <option key={option} value={option}>{option}</option>
-            ))}
-          </select>
-          <ChevronDown className="absolute right-3 top-3 h-4 w-4 text-gray-400 pointer-events-none" />
+        {/* Book Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          {filteredBooks.map(book => (
+            <BookCard
+              key={book.id}
+              book={book}
+              onDelete={handleDelete}
+              onEdit={handleEdit}
+            />
+          ))}
         </div>
+
+        {filteredBooks.length === 0 && (
+          <div className="text-center py-10">
+            <p className="text-gray-500 text-lg">No books found matching your search.</p>
+          </div>
+        )}
       </div>
-
-      {/* Book Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {filteredBooks.map(book => (
-          <BookCard
-            key={book.id}
-            book={book}
-            onDelete={handleDelete}
-            onEdit={handleEdit}
-          />
-        ))}
-      </div>
-
-      {filteredBooks.length === 0 && (
-        <div className="text-center py-10">
-          <p className="text-gray-500 text-lg">No books found matching your search.</p>
-        </div>
-      )}
-    </div>
-   </PagesLayout>
+    </PagesLayout>
   );
 };
 
