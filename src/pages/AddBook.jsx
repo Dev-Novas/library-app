@@ -31,17 +31,18 @@ const AddBook = () => {
  
   return (
     <PagesLayout>
-      <div className="bg-white max-w-lg mx-auto rounded-lg shadow-md p-6 mt-5">
+     <div className="bg-[#F7FCFC] p-4 font-play-au">
+     <div className="bg-white max-w-lg mx-auto rounded-lg shadow-md p-6 ">
         <div className="flex justify-center items-center mb-4">
-          <h2 className="text-xl font-medium">Add New Book</h2>
+          <h2 className="text-xl font-extrabold text-[#173F5F]">Add New Book</h2>
         </div>
-        <form className="flex flex-col space-y-3">
+        <form className="flex flex-col space-y-3 bg-white">
           {[
             { label: "Title", id: "title", type: "text", required: true },
             { label: "Author", id: "author", type: "text", required: true },
             { label: "Published Year", id: "published", type: "text" },
             { label: "ISBN", id: "isbn", type: "text", required: true },
-            { label: "Cover Image Url", id: "coverimage", type: "text" },
+            { label: "Cover Image", id: "coverimage", type: "file" },
             { label: "Publisher", id: "publisher", type:"text"},
             { label: "Number Of Pages", id: "pagecount", type:"text"},
             { label: "Available Copies", id: "copies", type:"number"}
@@ -86,7 +87,7 @@ const AddBook = () => {
           <div>
             <button
               type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700"
+              className="bg-[#173F5F] text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700"
             >
               Add Book
             </button>
@@ -94,7 +95,7 @@ const AddBook = () => {
         </form>
         <div className="flex items-center justify-center p-4 bg-gray-100 rounded-lg mt-3">
           <p className="mr-3 text-gray-800">Want to edit a book?</p>
-          <button onClick={toggleEditForm} className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">
+          <button onClick={toggleEditForm} className="bg-[#173F5F] text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">
             Edit Book
             </button>
         </div>
@@ -115,7 +116,7 @@ const AddBook = () => {
                 { label: "Author", id: "author", type: "text", required: true },
                 { label: "Published Year", id: "published", type: "text" },
                 { label: "ISBN", id: "isbn", type: "text", required: true },
-                { label: "Cover Image Url", id: "coverimage", type: "text" },
+                { label: "Cover Image", id: "coverimage", type: "file" },
                 { label: "Publisher", id: "publisher", type:"text"},
                 { label: "Number Of Pages", id: "pagecount", type:"text"},
                 { label: "Available Copies", id: "copies", type:"number"}
@@ -178,7 +179,7 @@ const AddBook = () => {
                 </button>
                 <button 
                   type="submit" 
-                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                  className="bg-[#173F5F] text-white px-4 py-2 rounded hover:bg-blue-600"
                 >
                   Save Changes
                 </button>
@@ -199,6 +200,7 @@ const AddBook = () => {
 
       
       </div>
+     </div>
     </PagesLayout>
   );
 };
