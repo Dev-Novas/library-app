@@ -102,7 +102,7 @@ const AddBook = () => {
         {/* Edit book form */}
         {showEditForm && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg max-h-[500px] overflow-y-auto">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-lg sm:max-w-xl md:max-w-2xl max-h-[90vh] overflow-y-auto sm:rounded-xl">
               <div className="flex justify-between items-center mb-3">
                 <h2 className="text-xl font-bold">Edit Book</h2>
                 <button onClick={toggleEditForm} className="text-gray-500 hover:text-gray-700">
@@ -110,7 +110,7 @@ const AddBook = () => {
 
                 </button>
               </div>
-              <form action="" className="flex flex-col space-y-2 h-auto">
+              <form action="" className="flex flex-col space-y-4">
               {[
                 { label: "Title", id: "title", type: "text", required: true },
                 { label: "Author", id: "author", type: "text", required: true },
@@ -122,7 +122,7 @@ const AddBook = () => {
                 { label: "Available Copies", id: "copies", type:"number"}
     
               ].map(({ label, id, type, required }) => (
-                <div key={id}>
+                <div key={id} className="w-full">
                   <label htmlFor={id} className="text-sm font-medium block mb-1">
                     {label}
                   </label>
@@ -130,12 +130,12 @@ const AddBook = () => {
                     id={id}
                     type={type}
                     required={required}
-                    className="w-full bg-gray-100 border rounded-md h-7 border-gray-300 px-3 focus:outline-none focus:border-blue-500"/>
+                    className="w-full bg-gray-100 border rounded-md h-10 border-gray-300 px-3 focus:outline-none focus:border-blue-500 text-sm" />
               </div>
               ))}
               <div>
               <label htmlFor="status" className="text-sm font-medium block mb-1">Availability Status</label>
-            <select id="genre" className="w-full bg-gray-100 border rounded-md h-10 border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 resize-none" required>
+            <select id="genre" className="w-full bg-gray-100 border rounded-md h-10 border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 text-sm" required>
             <option value="">Select availability status</option>
               {status.map((status, index) => (
                 <option key={index} value={status}>
@@ -147,7 +147,7 @@ const AddBook = () => {
               </div>
               <div>
             <label htmlFor="genre" className="text-sm font-medium block mb-1">Genre</label>
-            <select id="genre" className="w-full bg-gray-100 border rounded-md h-10 border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 resize-none" required>
+            <select id="genre" className="w-full bg-gray-100 border rounded-md h-10 border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500" required>
             <option value="">Select a genre</option>
               {genre.map((genre, index) => (
                 <option key={index} value={genre}>
