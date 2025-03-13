@@ -10,8 +10,8 @@ import { ServiceData } from "../constants";
 
 const ActiveSlider = () => {
   return (
-    <div className="flex items-center justify-center flex-col h-screen bg-amber-200">
-      <div className="text-center max-w-3xl mb-10">
+    <div className="flex items-center justify-center flex-col h-screen bg-[#F7FCFC]">
+      <div className="text-center max-w-3xl mb-10 text-[#173F5F]">
         <h1 className="text-3xl lg:text-5xl font-bold text-gray-800">
           Our Curated Collection
         </h1>
@@ -39,7 +39,7 @@ const ActiveSlider = () => {
       >
         {ServiceData.map((item) => (
           <SwiperSlide key={item.title}>
-            <div className="flex flex-col gap-6 mb-20 group relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer">
+            <div className="flex flex-col gap-6 mb-20 group relative shadow-lg text-white drop-shadow-md rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer">
               <div
                 className="absolute inset-0 bg-cover bg-center "
                 style={{ backgroundImage: `url(${item.backgroundImage})` }}

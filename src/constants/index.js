@@ -20,6 +20,7 @@ export const ServiceData = [
     title: "Development",
     content: "Lorem ipsum dolor sit /amet, consectetur adipiscing elit.",
     backgroundImage: SpaceCity9,
+    className: "text-amber-100",
   },
   {
     icon: RxPencil2,
