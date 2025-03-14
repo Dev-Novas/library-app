@@ -25,6 +25,7 @@ const AddBook = () => {
     event.preventDefault();
     // collect from inputs
     const formData = new FormData(event.target);
+    console.log(formData);
     try {
       // submit data to backend
       const response = await axios.post(
@@ -37,7 +38,8 @@ const AddBook = () => {
       // Navigate to books page
       navigate("/books");
     } catch (error) {
-      alert("Failed to book to Library");
+      alert("Failed to add book to Library");
+      console.log(error) 
       setButtonText("Add Book");
     }
   };
@@ -64,13 +66,13 @@ const AddBook = () => {
             {[
               {label: "Title",id: "title",type: "text",required: true, name: "title"},
               { label: "Author", id: "author", type: "text", required: true, name: "author" },
-              { label: "Published Year", id: "published", type: "text", name: "published year" },
+              { label: "Published Year", id: "published", type: "text", name: "publishedYear" },
               { label: "ISBN", id: "isbn", type: "text", required: true, name:"isbn" },
-              { label: "Cover Image", id: "coverimage", type: "file", name:"cover image" },
+              { label: "Cover Image", id: "coverimage", type: "file", name:"image" },
               { label: "Publisher", id: "publisher", type: "text", name:"publisher" },
-              { label: "Number Of Pages", id: "pagecount", type: "text", name:"page count" },
-              { label: "Available Copies", id: "copies", type: "number", name:"available copies" },
-            ].map(({ label, id, type, required }) => (
+              { label: "Number Of Pages", id: "pagecount", type: "text", name:"pageCount" },
+              { label: "Available Copies", id: "copies", type: "number", name:"availableCopies" },
+            ].map(({ label, id, type, required,name }) => (
               <div key={id}>
                 <label htmlFor={id} className="text-sm font-medium block mb-1">
                   {label}
@@ -79,6 +81,7 @@ const AddBook = () => {
                   id={id}
                   type={type}
                   required={required}
+                  name={name}
                   className="w-full bg-gray-100 border rounded-md h-8 border-gray-300 px-3 focus:outline-none focus:border-blue-500"
                 />
               </div>
@@ -89,6 +92,7 @@ const AddBook = () => {
               </label>
               <select
                 id="genre"
+                name="genre"
                 className="w-full bg-gray-100 border rounded-md h-10 border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 resize-none"
                 required
               >
@@ -109,6 +113,7 @@ const AddBook = () => {
               </label>
               <textarea
                 id="description"
+                name="summary"
                 className="w-full bg-gray-100 border rounded-md h-20 border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 resize-none"
               ></textarea>
             </div>
