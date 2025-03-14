@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/Books" element={<Books />} />
         <Route path="/SingleBook" element={<SingleBook />} />
+        {/* <Route path="/SingleBook: id" element={<SingleBook />} /> */}
         <Route path="/AddBook" element={<AddBook />} />
       </Routes>
     </BrowserRouter>

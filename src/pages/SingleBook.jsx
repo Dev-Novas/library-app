@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import PagesLayout from "../layouts/PagesLayout";
 import Seeme from "../assets/images/seeme.png"
+import Bird from "../assets/images/bird.jpg"
 import Last from "../assets/images/last.png"
 import Rtireland from "../assets/images/rtireland.jpg"
 import Tear from "../assets/images/tear.jpg"
+import { useParams } from "react-router";
+import axios from "axios";
 
 const SingleBook = () => {
+  useParams();
+  // const [book, setBooks] = useState()
+  // const getBook = async () => {
+  //   // https://library-api-0zbq.onrender.com/api/v1/books
+  //   const response = await axios.get('http://localhost:3001/api/v1/books//${id}');
+  //   console.table(response.data);
+  //   setBooks(response.data.books)
+  // }
+
+  // useEffect(() => {
+  //   getBook();
+  // }, [id]);
+
 
   return (
     <PagesLayout>
       <div className="bg-white p-8  max-w-7xl  m-0 font-play-au">
         {/* Main Book Info Section */}
-        <div className="flex flex-col md:flex-row items-start mb-8">
+        <div className="flex flex-col md:flex-row items-start mb-8 border-b max-h-screen">
           {/* Book Image - Made Taller (50% of viewport height) */}
-          <div className="w-full md:w-2/5 mb-6 md:mb-0 h-[80%]">
-            <div className="h-96 md:h-screen md:max-h-[20%]">
+          <div className=" md:w-2/5 mb-6 md:mb-0 max-h-50">
+            <div className=" md:max-h-[100%]">
               <img
-                src="https://images.unsplash.com/photo-1522143049013-2519756a52d4"
+                src={Bird}
                 alt="Birds Gonna Be Happy"
-                className="rounded-lg shadow-lg w-full h-full object-cover"
+                className="rounded-lg shadow-lg w-full  object-cover"
               />
             </div>
 
@@ -41,7 +57,7 @@ const SingleBook = () => {
                 <h1 className="text-4xl font-bold text-gray-800 mt-2">Birds Gonna Be Happy</h1>
                 <p className="text-gray-600 mt-2 text-lg">By <span className="font-medium">Jane Audubon</span></p>
               </div>
-              <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-base font-medium">In Stock</span>
+              <span className="bg-[#173F5F] text-black px-4 py-2 rounded-full text-base font-medium">In Stock</span>
             </div>
 
             {/* Star Rating */}
@@ -90,7 +106,7 @@ const SingleBook = () => {
                 <p className="font-medium">978-1234567890</p>
               </div>
               <div>
-                <p className="text-gray-500">Category</p>
+                <p className="text-gray-500">Genre</p>
                 <p className="font-medium">Nature & Wildlife</p>
               </div>
             </div>
@@ -98,7 +114,7 @@ const SingleBook = () => {
         </div>
 
         {/* Reviews Section - Reduced to 2 reviews */}
-        <div className="mt-16">
+        <div className="mt-16 border-b">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-bold text-gray-800">Customer Reviews</h2>
             <button className="px-5 py-3 border rounded-md text-blue-600 font-semibold hover:bg-blue-50 transition">
@@ -109,7 +125,7 @@ const SingleBook = () => {
           {/* Just 2 Individual Reviews */}
           <div className="space-y-10 flex flex-row justify-around">
             {/* Review 1 */}
-            <div className="border-r pb-8">
+            <div className=" pb-8">
               <div className="flex items-start">
                 <div className="mr-5">
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
@@ -172,7 +188,7 @@ const SingleBook = () => {
           </div>
 
           {/* See More Reviews Button */}
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center flex justify-around">
             <button className="px-8 py-3 border rounded-md text-blue-600 font-semibold hover:bg-blue-50 transition text-lg">
               See All 128 Reviews
             </button>
